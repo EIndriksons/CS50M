@@ -31,3 +31,15 @@ function newTodo() {
     uncheckedCount += 1
     $(uncheckedCountSpan).text(uncheckedCount)
 }
+
+$(document).ready(function() {
+
+    /* adds Checkbox functionality for a finished task */
+    $(list).on('click', '.' + classNames.TODO_CHECKBOX, function() {
+        if ($('.' + classNames.TODO_CHECKBOX).is(':checked')) {
+            $(this).next('.' + classNames.TODO_TEXT).prop('disabled', true)
+        } else {
+            $(this).next('.' + classNames.TODO_TEXT).prop('disabled', false)
+        }
+    })
+})
