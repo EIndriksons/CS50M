@@ -24,11 +24,21 @@ function newTodo() {
     $(list).append(ListItem)
 
     // increment item count
-    itemCount += 1
-    $(itemCountSpan).text(itemCount)
+    updateItemCount(1)
 
     // increment unchecked count
-    uncheckedCount += 1
+    updateUncheckedCount(1)
+}
+
+/* updates the count of items */
+function updateItemCount(count) {
+    itemCount += count
+    $(itemCountSpan).text(itemCount)
+}
+
+/* updates the unchecked count */
+function updateUncheckedCount(count) {
+    uncheckedCount += count
     $(uncheckedCountSpan).text(uncheckedCount)
 }
 
@@ -38,8 +48,10 @@ $(document).ready(function() {
     $(list).on('click', '.' + classNames.TODO_CHECKBOX, function() {
         if ($('.' + classNames.TODO_CHECKBOX).is(':checked')) {
             $(this).next('.' + classNames.TODO_TEXT).prop('disabled', true)
+            updateUncheckedCount(-1)
         } else {
             $(this).next('.' + classNames.TODO_TEXT).prop('disabled', false)
+            updateUncheckedCount(1)
         }
     })
 })
