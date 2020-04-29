@@ -54,4 +54,18 @@ $(document).ready(function() {
             updateUncheckedCount(1)
         }
     })
+
+    /* adds delete button functionality to remove a task */
+    $(list).on('click', '.' + classNames.TODO_DELETE, function() {
+
+        // if it is not checked only then update count
+        if (!$(this).next('.' + classNames.TODO_CHECKBOX).is(':checked')) {
+            updateUncheckedCount(-1)
+        }
+        updateItemCount(-1)
+
+        // finally remove task
+        $(this).parent().remove()
+
+    })
 })
