@@ -1,24 +1,34 @@
-const list = document.getElementById('todo-list')
-const itemCountSpan = document.getElementById('item-count')
-const uncheckedCountSpan = document.getElementById('unchecked-count')
+import React from 'react';
+import { render } from 'react-dom';
+import Hello from './hello';
 
-//  <li>
-//    <input type="checkbox" />
-//    <button>delete</button>
-//    <span>text</span>
-//  </li>
+const Todo = props => (
+    <li>
+        <input type="checkbox"/>
+        <button>Delete</button>
+        <span>{props.text}</span>
+    </li>
+)
 
-function newTodo() {
-  // get text
-  // create li
-  // create input checkbox
-  // create button
-  // create span
-  // update counts
+class App extends React.Component {
+
+    constructor() {
+        super()
+        this.state = {
+            todos: []
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <ul>
+                    {this.state.todos.map(todo => <Todo todo={todo} />)}
+                </ul>
+            </div>
+        )
+    }
+
 }
 
-function deleteTodo() {
-  // find the todo to delete
-  // delete
-  // update the counts
-}
+render(<App />, document.getElementById('root'))
