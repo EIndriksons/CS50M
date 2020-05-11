@@ -8,6 +8,6 @@ If you are a student of this course - please see the Course guidelines on [Acade
 ## Table of Contents
 - [Lecture 0](/lecture0/lecture) - Introduction to JavaScript 1
 - [Lecture 1](/lecture1/lecture) - Introduction to JavaScript 2
-  * [Lecture](/lecture1/project0) - Project 0 - JavaScript implementation - Todo app
-  * [Lecture](/lecture1/project0-react) - Project 0 - React implementation - Todo app
+  * [Project 0](/lecture1/project0) - JavaScript implementation - Todo app
+  * [Project 0](/lecture1/project0-react) - React implementation - Todo app
 - [Lecture 2](/lecture2/lecture) - Introduction to React
