@@ -35,11 +35,9 @@ But it can be both synchronous and asynchronous by utilizing:
 - Database calls
 
 ## Callbacks vs. Promises vs. Async/Await
-With **Callbacks** you can control the flow with asynchronous calls. Execute function once asynchronous call returns value so that the program doesn’t have to halt and wait for value. This however can create a "callback hell". [Example here.](/a-callbackAuth.js)
-
-With **Promises** you alleviate "callback hell" by allowing you to write code that assumes a value is returned within a success function. This needs only single error handler. [Example here.](/a-promiseAuth.js)
-
-**Async/Await** introduced in ES2017 allows people to write asyinc code as if it were synchronous. [Example here.](/a-asyncAwaitAuth.js)
+- With **Callbacks** you can control the flow with asynchronous calls. Execute function once asynchronous call returns value so that the program doesn’t have to halt and wait for value. This however can create a "callback hell". [Example here.](/a-callbackAuth.js)
+- With **Promises** you alleviate "callback hell" by allowing you to write code that assumes a value is returned within a success function. This needs only single error handler. [Example here.](/a-promiseAuth.js)
+- **Async/Await** introduced in ES2017 allows people to write asyinc code as if it were synchronous. [Example here.](/a-asyncAwaitAuth.js)
 
 ## this
 Refers to an object that’s set at the creation of a new execution context (function invocation). In the global execution context, refers to global object. If the function is called as a method of an object, ```this``` is bound to the object the method is called on.
