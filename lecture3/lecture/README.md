@@ -129,3 +129,33 @@ export default Count
 
 ### PropTypes
 React can validate the types of component props at runtime. Development tool that allows developers to ensure they’re passing correct props. Helps document your components’ APIs. Only runs in development mode.
+
+Example:
+```javascript
+import PropTypes from 'prop-types'
+
+Count.propTypes = {
+    count: PropTypes.number.isRequired
+}
+```
+
+This will check if the Count prop contains number and will throw a warning if it does not.
+
+You can also define PropTypes in a Class:
+```javascript
+import PropTypes from 'prop-types'
+
+class Count extends React.Component {
+    static propTypes = {
+        count: PropTypes.number.isRequired
+    }
+
+    render() {
+        return (
+            <Text style={styles.text}>
+                {this.props.count}
+            </Text>
+        )
+    }
+}
+```
